@@ -2,7 +2,7 @@
 import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
-
+import cors from "cors";
 
 import { movieRouter } from './routes/movie.js';
 
@@ -14,7 +14,9 @@ console.log(process.env);
 const app = express();
 
 //app.use is the middleware to convert to JSON
-app.use(express.json())
+app.use(express.json());
+
+app.use(cors());
 
 const PORT = process.env.PORT || 4000;
 
