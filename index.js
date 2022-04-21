@@ -16,11 +16,11 @@ const app = express();
 //app.use is the middleware to convert to JSON
 app.use(express.json())
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 //const MONGO_URL="mongodb://localhost";
 const MONGO_URL=process.env.MONGO_URL;
-//const MONGO_URL="mongodb+srv://vignesh:welcome123@cluster0.gnatp.mongodb.net";
+
 
  async function createConnection(){
   const client=new MongoClient(MONGO_URL);
