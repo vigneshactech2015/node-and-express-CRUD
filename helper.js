@@ -23,7 +23,7 @@ async function updateMovieByName(name, request) {
       .find({})
       .toArray();
   
-    //we use toArray to avoid cursor(pagination) so that we can get array
+    //we use toArray to avoid cursor(pagination) so that we can get all array
     console.log(movies);
     return movies;
   }
